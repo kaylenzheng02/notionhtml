@@ -1,0 +1,175 @@
+:root {
+    --color-text: #193561;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --ease-smooth: cubic-bezier(0.37, 0, 0.63, 1);
+    --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    padding: 0 5vw;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.intro {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.name-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.intro h1 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.intro p {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* s hover 360 thing n 360 to start */
+
+.cool-s {
+    height: 96px;
+    width: auto;
+    margin-left: -24px;
+    cursor: pointer;
+    transform-origin: center;
+    will-change: transform, filter;
+    transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+}
+
+.cool-s:hover {
+    animation: s-hover 5s var(--ease-smooth) forwards;
+}
+
+@keyframes s-hover {
+    0% {
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(0deg) saturate(1) brightness(1);
+    }
+
+    30% {
+        transform: scale(1.45) rotate(180deg);
+        filter: hue-rotate(180deg) saturate(5) brightness(1.35);
+    }
+
+    60% {
+        transform: scale(1.45) rotate(360deg);
+        filter: hue-rotate(360deg) saturate(5) brightness(1.35);
+    }
+
+    65% {
+        transform: scale(1.45) rotate(360deg);
+        filter: hue-rotate(360deg) saturate(5) brightness(1.35);
+    }
+
+    80% {
+        transform: scale(1.2) rotate(180deg);
+        filter: hue-rotate(180deg) saturate(3) brightness(1.2);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(0deg) saturate(1) brightness(1);
+    }
+}
+
+/* gunpla */
+
+.media {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.media-block {
+    flex-shrink: 0;
+}
+
+.caption {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.caption--center {
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* Gunpla section */
+
+.gunpla {
+    position: relative;
+    max-width: min(400px, 35vw);
+    margin-left: -15px;
+}
+
+.pharact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    pointer-events: none;
+    transform: translate(calc(-50% - 260px), calc(-50% + 50px));
+}
+
+/* climb! */
+
+.climb {
+    transform: translate(50px, -100px);
+}
+
+.climb > img {
+    max-width: min(400px, 40vw);
+}
+
+.alex-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: -25px;
+    margin-left: -35px;
+}
+
+.alex {
+    max-width: min(160px, 20vw);
+    flex-shrink: 0;
+}
+
+.climb .caption {
+    max-width: 192px;
+}
